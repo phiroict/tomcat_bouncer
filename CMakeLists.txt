@@ -3,4 +3,4 @@ project(tomcat_bouncer C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(tomcat_bouncer main.c)
+add_executable(tomcat_bouncer tomcat-bouncer.c)
