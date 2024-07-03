@@ -59,7 +59,9 @@ int main(int argc, char **argv) {
             if (event->len) {
                 if (event->mask & IN_CREATE) {
                     if (!(event->mask & IN_ISDIR)) {
-                        printf("New file %s created.\n", event->name);
+                        printf("New file %s created.\nWaiting 20 seconds for the transfer to complete\n", event->name);
+                        sleep(20);
+                        printf("Wait complete, bouncing tomcat\n");
                         // Restart Tomcat service
                         execute_command("systemctl restart tomcat.service");
                     }
